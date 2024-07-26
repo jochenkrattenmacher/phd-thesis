@@ -9,7 +9,7 @@
 
 \usepackage[backend=biber, style=authoryear, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
 
-\hypersetup{colorlinks=true, linkcolor={black}, citecolor={blue}, urlcolor=blue}
+\hypersetup{colorlinks=true, linkcolor={green}, citecolor={blue}, urlcolor=blue}
 \addbibresource{biblio.bib}
 \DefineBibliographyStrings{english}{%
   backrefpage = {page},% originally "cited on page"
@@ -27,18 +27,14 @@
 		% \SgAddLot%  List of tables.
 	\end{frontmatter}
    
-	\section{title}
-	\label{test}
-	\section{t2}
-	\autoref{test}
 	\input{Content/background}
-	% \input{Content/aims}
-	% \input{Content/publications}
-	% \input{Content/methods}
-	% \chapter{Results}
-	% \input{Content/tau_results}
-	% \input{Content/Ase1}
-	% \input{Content/discussion}
+	\input{Content/aims}
+	\input{Content/publications}
+	\input{Content/methods}
+	\chapter{Results}
+	\input{Content/tau_results}
+	\input{Content/Ase1}
+	\input{Content/discussion}
 	
 \label{Bibliography}
 \fancyhead[LO]{\leftmark}
@@ -47,11 +43,11 @@
 \printbibliography
 
 
-% \appendix
-% \renewcommand{\thefigure}{A.\arabic{figure}}
-% \setcounter{figure}{0}
-% \appendixpage
-%\input{Content/tau_supp}
+\appendix
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{figure}{0}
+\appendixpage
+\input{Content/tau_supp}
 
 
 \end{document}  
