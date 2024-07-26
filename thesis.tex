@@ -19,14 +19,18 @@
 % The document.
 \begin{document}
 	\begin{frontmatter}
-		\input{Frontmatter/titlepage}
-		\input{Frontmatter/acknowledgements}%
-		\input{Frontmatter/abstract}
+		% \input{Frontmatter/titlepage}
+		% \input{Frontmatter/acknowledgements}%
+		% \input{Frontmatter/abstract}
 		\SgAddToc%  Table of contents.
-		\SgAddLof%  List of figures.
-		\SgAddLot%  List of tables.
+		% \SgAddLof%  List of figures.
+		% \SgAddLot%  List of tables.
 	\end{frontmatter}
    
+	\section{title}
+	\label{test}
+	\section{t2}
+	\autoref{test}
 	\input{Content/background}
 	% \input{Content/aims}
 	% \input{Content/publications}
@@ -43,10 +47,11 @@
 \printbibliography
 
 
-\appendix
+% \appendix
+% \renewcommand{\thefigure}{A.\arabic{figure}}
+% \setcounter{figure}{0}
+% \appendixpage
+%\input{Content/tau_supp}
 
-\renewcommand{\thefigure}{A.\arabic{figure}}
-\setcounter{figure}{0}
-\appendixpage
-\input{Content/tau_supp}
+
 \end{document}  
