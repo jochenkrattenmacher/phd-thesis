@@ -4,7 +4,7 @@
 % Version 1.0 released 11.06.2013
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{SPhdThesis}[2013/06/11 v1.0 SPhdThesis class]
+\ProvidesClass{thesis}[2013/06/11 v1.0 SPhdThesis class]
 
 \RequirePackage{xkeyval}
 
@@ -241,12 +241,6 @@
 
 % Remove dots.
 \renewcommand{\cftdotsep}{\cftnodots}
-
-% Remove dots from list of algorithms.
-% This is necessary because we use algorithm2e which mananges its own list of algorithms.
-\makeatletter
-	\renewcommand{\@dotsep}{5000}
-\makeatother
 
 % Format chapter entries differently in toc.
 \renewcommand{\cftchapfont}{\SgIntTocSectionFormat}
