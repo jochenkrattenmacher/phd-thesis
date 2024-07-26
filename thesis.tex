@@ -1,0 +1,65 @@
+\documentclass{SPhdThesis}
+\usepackage{siunitx}
+\usepackage{placeins}
+\usepackage{xspace}
+\usepackage{xstring}
+\usepackage{xfrac}
+\usepackage{appendix}
+\usepackage{ccaption}
+
+\usepackage[backend=bibtex, style=authoryear, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
+	
+\addbibresource{biblio.bib}
+\hypersetup{plainpages=false, colorlinks=true, linkcolor={black}, citecolor={webblue}, urlcolor=webblue} % Colors hyperlinks in blue - change to black if annoying
+\DefineBibliographyStrings{english}{%
+  backrefpage = {page},% originally "cited on page"
+  backrefpages = {pages},% originally "cited on pages"
+}
+
+
+% PDF and title properties.
+\SgSetTitle{Interaction dynamics of cytoskeletal polymers}
+\SgSetAuthor{Jochen Krattenmacher}
+\SgSetAuthorDegrees{Ms. Science}
+\SgSetYear{2024}
+\SgSetDegree{Doctor of Philosophy}
+\SgSetDepartment{Department of Physical and Macromolecular Chemistry}
+\SgSetUniversity{Charles University in Prague}
+
+
+% The document.
+\begin{document}
+	\begin{frontmatter}
+		\SgAddTitle%
+            \SgAddDeclaration
+		\input{acknowledgements}%
+		\input{abstract}%
+		\SgAddToc%  Table of contents.
+		\SgAddLof%  List of figures.
+		\SgAddLot%  List of tables.
+		\SgAddLoa%  List of algorithms.
+	\end{frontmatter}
+   
+	\input{Content/background}
+        \input{Content/aims}
+        \input{Content/publications}
+        \input{Content/methods}
+        \chapter{Results}
+	\input{Content/tau_results}
+	\input{Content/Ase1}
+	\input{Content/discussion}
+	
+\label{Bibliography}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LE,RO]{\thepage}
+\printbibliography
+
+
+\appendix
+
+\renewcommand{\thefigure}{A.\arabic{figure}}
+\setcounter{figure}{0}
+\appendixpage
+\input{Content/tau_supp}
+\end{document}  
