@@ -118,7 +118,7 @@
 \RequirePackage[dvipsnames,rgb]{xcolor} % For defining colors.
 \RequirePackage{ifthen}                               % For comparison.
 \RequirePackage[a-2u]{pdfx}
-
+\RequirePackage{bookmark}
 
 
 % -----------------------------------------------------------------------
