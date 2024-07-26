@@ -74,6 +74,7 @@
 % F O N T S.
 
 \RequirePackage[T1]{fontenc}  % Use T1 encoded cm-super fonts.
+\usepackage{lmodern}
 \RequirePackage{microtype}    % Improve typesetting.
 \RequirePackage{fix-cm}       % Support for arbitrary font size for cm.
 
@@ -114,9 +115,9 @@
 \RequirePackage{graphicx, subfig}                     % Figures.
 \RequirePackage{amsmath, amssymb, amsthm}             % Math symbols and fonts.
 \RequirePackage{float}                                % Must be done before hyperref.
-\RequirePackage[usenames,dvipsnames,hyperref,rgb]{xcolor} % For defining colors.
+\RequirePackage[dvipsnames,rgb]{xcolor} % For defining colors.
 \RequirePackage{ifthen}                               % For comparison.
-\RequirePackage[a-1u]{pdfx}
+\RequirePackage[a-2u]{pdfx}
 
 
 
@@ -189,51 +190,6 @@
 % Set color for table rules.
 \ifthenelse{\equal{\SgIntMedia}{screen}}{\arrayrulecolor[rgb]{0.0, 0.6, 0.9}}{}
 \ifthenelse{\equal{\SgIntMedia}{print}}{\arrayrulecolor[rgb]{0.0, 0.0, 0.0}}{}
-
-
-
-% -----------------------------------------------------------------------
-% A L G O R I T H M
-
-\RequirePackage[algo2e, ruled, linesnumbered, algochapter]{algorithm2e}
-\DontPrintSemicolon                      % Dont print semicolons at end of lines.
-\algoheightrule       = \heavyrulewidth  % Set the width of the top and bottom rules.
-\algotitleheightrule  = \lightrulewidth  % Set the width of the middle rule.
-\SetAlgoInsideSkip{medskip}              % Set distance between middle rule and algorithm.
-\interspacetitleruled = 0.2cm            % Set distance between caption and rules.
-\setlength{\algomargin}{2.25em}          % Set the margin of the algorithm text.
-\SetNlSkip{1.25em}                       % Set the spacing between line numbers and text.
-
-\newenvironment{SgAlgorithm}[1][t]
-{%
-	\begin{algorithm2e}[#1]
-    \linespread{1.3} % Set the line spacing to one and half.
-    \selectfont      % The linespread is effective only after selectfont.%
-}
-{%
-	\end{algorithm2e}
-}
-
-
-
-% -----------------------------------------------------------------------
-% B I B L I O G R A P H Y
-
-% Rename bibliography to references.
-\renewcommand{\bibname}{References}
-
-% Define a new command to include the bibliography file and 
-% set the formatting options.
-\newcommand{\SgIncludeBib}[1]
-{%
-	\clearpage                                 % Fix the page number in TOC.
-	\phantomsection                            % Fix the link in PDF.
-	\addcontentsline{toc}{chapter}{References} % Add the bibliography to TOC.
-	\bibliographystyle{alpha}                  % Set the bibliography style.
-	\bibliography{#1}                          % Include the bibliography file.
-}
-
-
 
 % -----------------------------------------------------------------------
 % F A N C Y   H E A D E R
@@ -385,75 +341,20 @@
 % H Y P E R E F
 % 
 % Set hyperlink settings.
+\PassOptionsToPackage{hyphens}{url}
+%\RequirePackage[hyphens]{url} % Embedding URL's in document.
 
-\RequirePackage[hyphens]{url} % Embedding URL's in document.
-
-% Enable hyperlinks only in the PDF.
-\RequirePackage[bookmarks=true, pdfstartview=Fit, linktoc=page, pdfpagemode=UseNone]{hyperref}
-
-% Define the colors of the hyperlink.
-\ifthenelse{\equal{\SgIntMedia}{screen}}
-{%
-	\definecolor{webgreen}{rgb}{0,.5,0} % previously used magenta.
-	\definecolor{webblue}{rgb}{0,0,1}   % previously used orange.
-	
-	\hypersetup
-	{%
-		colorlinks = true,
-		linkcolor  = webgreen,
-		citecolor  = cyan,
-		urlcolor   = webblue
-	}
-}{}
-\ifthenelse{\equal{\SgIntMedia}{print}}
-{%
-	\hypersetup{colorlinks=false,pdfborder={0 0 0}}
-}{}
-
-%Define the proerties describing PDF.
-\newcommand{\SgIntSetupPdfProps}%
-{%
-	\hypersetup
-	{%
-		pdfauthor   = \SgIntAuthor, 
-		pdftitle    = \SgIntTitle, 
-		pdfsubject  = \SgIntSubject, 
-		pdfkeywords = \SgIntKeywords
-	}
-}
-
-
-
-% -----------------------------------------------------------------------
-% D O C U M E N T   P R O P E R T I E S
-% 
-% Important variables used for creating PDF properties and the title page.
-
-% Define empty variables for creating title and setting PDF properties.
-\newcommand{\SgIntTitle}{}
-\newcommand{\SgIntAuthor}{}
-\newcommand{\SgIntAuthorDegrees}{}
-\newcommand{\SgIntYear}{}
-\newcommand{\SgIntSubject}{}
-\newcommand{\SgIntKeywords}{}
-\newcommand{\SgIntDegree}{}
-\newcommand{\SgIntDepartment}{}
-\newcommand{\SgIntUniversity}{}
-\newcommand{\SgIntDeclarationDate}{}
-
-% Define commands for setting  the above variables.
-\newcommand{\SgSetTitle}[1]{\renewcommand{\SgIntTitle}{#1}\SgIntSetupPdfProps}
-\newcommand{\SgSetAuthor}[1]{\renewcommand{\SgIntAuthor}{#1}\SgIntSetupPdfProps}
-\newcommand{\SgSetAuthorDegrees}[1]{\renewcommand{\SgIntAuthorDegrees}{#1}}
-\newcommand{\SgSetYear}[1]{\renewcommand{\SgIntYear}{#1}}
-\newcommand{\SgSetSubject}[1]{\renewcommand{\SgIntSubject}{#1}\SgIntSetupPdfProps}
-\newcommand{\SgSetKeywords}[1]{\renewcommand{\SgIntKeywords}{#1}\SgIntSetupPdfProps}
-\newcommand{\SgSetDegree}[1]{\renewcommand{\SgIntDegree}{#1}}
-\newcommand{\SgSetDepartment}[1]{\renewcommand{\SgIntDepartment}{#1}}
-\newcommand{\SgSetUniversity}[1]{\renewcommand{\SgIntUniversity}{#1}}
-\newcommand{\SgSetDeclarationDate}[1]{\renewcommand{\SgIntDeclarationDate}{#1}}
-
-
+% %Define the proerties describing PDF.
+% \newcommand{\SgIntSetupPdfProps}%
+% {%
+% 	\hypersetup
+% 	{%
+% 		pdfauthor   = \SgIntAuthor, 
+% 		pdftitle    = \SgIntTitle, 
+% 		pdfsubject  = \SgIntSubject, 
+% 		pdfkeywords = \SgIntKeywords
+% 	}
+% }
 
 % -----------------------------------------------------------------------
 % C L E V E R E F
@@ -479,43 +380,6 @@
 \Crefformat{equation}{#2Equation~#1#3}
 \Crefformat{table}{#2Table~#1#3}
 \creflabelformat{equation}{#2#1#3}
-
-
-
-% -----------------------------------------------------------------------
-% T I T L E  P A G E
-\ifthenelse{\equal{\SgIntTitleCase}{upper}}
-{
-	\newcommand{\SgIntMakeUpperCase}[1]{\MakeUppercase{#1}}
-}
-{
-	\newcommand{\SgIntMakeUpperCase}[1]{#1}
-}
-\newcommand{\SgAddTitle}{%
-	\thispagestyle{empty}
-	\begin{center}
-		\vspace*{0.5in}
-		\Large{\bf{\SgIntMakeUpperCase{\SgIntTitle}}}
-		\\
-		\vspace{2.5in}
-
-		\large{\SgIntMakeUpperCase{\SgIntAuthor}} \\
-		\large{\emph{\SgIntAuthorDegrees}} \\
-		\vspace{2.5in}
-
-		\large{\SgIntMakeUpperCase{A Thesis Submitted for the Degree of \SgIntDegree}}
-		\vspace{0.2in}
-
-		\large{\SgIntMakeUpperCase{\SgIntDepartment}} \\
-		\large{\SgIntMakeUpperCase{\SgIntUniversity}} \\
-		\vspace{0.2in} 
-
-		\large{\SgIntYear}
-	\end{center}
-	\SgIntClearDoublePage
-}
-
-
 
 % -----------------------------------------------------------------------
 % D E C L A R A T I O N  P A G E

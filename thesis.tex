@@ -7,37 +7,24 @@
 \usepackage{appendix}
 \usepackage{ccaption}
 
-\usepackage[backend=bibtex, style=authoryear, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
-	
+\usepackage[backend=biber, style=authoryear, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
+
+\hypersetup{colorlinks=true, linkcolor={black}, citecolor={blue}, urlcolor=blue}
 \addbibresource{biblio.bib}
-\hypersetup{plainpages=false, colorlinks=true, linkcolor={black}, citecolor={webblue}, urlcolor=webblue} % Colors hyperlinks in blue - change to black if annoying
 \DefineBibliographyStrings{english}{%
   backrefpage = {page},% originally "cited on page"
   backrefpages = {pages},% originally "cited on pages"
 }
 
-
-% PDF and title properties.
-\SgSetTitle{Interaction dynamics of cytoskeletal polymers}
-\SgSetAuthor{Jochen Krattenmacher}
-\SgSetAuthorDegrees{Ms. Science}
-\SgSetYear{2024}
-\SgSetDegree{Doctor of Philosophy}
-\SgSetDepartment{Department of Physical and Macromolecular Chemistry}
-\SgSetUniversity{Charles University in Prague}
-
-
 % The document.
 \begin{document}
 	\begin{frontmatter}
-		\SgAddTitle%
-            \SgAddDeclaration
-		\input{acknowledgements}%
-		\input{abstract}%
+		\input{Frontmatter/titlepage}
+		\input{Frontmatter/acknowledgements}%
+		\input{Frontmatter/abstract}
 		\SgAddToc%  Table of contents.
 		\SgAddLof%  List of figures.
 		\SgAddLot%  List of tables.
-		\SgAddLoa%  List of algorithms.
 	\end{frontmatter}
    
 	\input{Content/background}
