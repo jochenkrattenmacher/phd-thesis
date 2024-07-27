@@ -1,0 +1,69 @@
+\usepackage[T1]{fontenc}  % Use T1 encoded cm-super fonts.
+\usepackage{lmodern}
+\usepackage{microtype}    % Improve typesetting.
+\usepackage[labelfont=bf]{caption}
+\usepackage{graphicx, subfig}                     % Figures.
+\usepackage[dvipsnames,rgb]{xcolor} % For defining colors.
+\usepackage{ifthen}                               % For comparison.
+\usepackage[a-2u]{pdfx}
+\usepackage{bookmark}
+\usepackage[a4paper, left=1.25in, right=1in, top=1in, bottom=1in, includehead]{geometry}
+\usepackage{booktabs, colortbl} % Tables.
+\usepackage{tabularx}           % Auto column sizing.
+\usepackage{siunitx}
+\usepackage{placeins}
+\usepackage{xspace}
+\usepackage{appendix}
+
+
+\newcommand{\IntClearDoublePage}{\clearpage{\pagestyle{empty}\cleardoublepage}}
+% -----------------------------------------------------------------------
+% T O C    L O F    L O T    L O A
+% 
+% Change the appearance of toc, lof, lot, etc.
+
+% Using tocloft, the toc can be formatted easily.
+\RequirePackage[titles, subfigure]{tocloft}
+
+% Remove dots.
+\renewcommand{\cftdotsep}{\cftnodots}
+
+% Format chapter entries differently in toc.
+\renewcommand{\cftchapfont}{\bfseries}
+
+% Fix the indentation of figure and table entries in the lof, lot, and loa.
+\setlength{\cftfigindent}{0in}
+\setlength{\cfttabindent}{0in}
+
+\newcommand{\AddToc}{\tableofcontents\IntClearDoublePage}
+\newcommand{\AddLof}{%
+	\newpage
+	\phantomsection % Requires hyperref; this is to fix the link.
+	\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\bfseries{}List of Figures}}
+	\listoffigures
+	\IntClearDoublePage
+}
+\newcommand{\AddLot}{%
+	\newpage
+	\phantomsection % Requires hyperref; this is to fix the link.
+	\addcontentsline{toc}{section}{\numberline{}\hspace{-.35in}{\bfseries{}List of Tables}}
+	\listoftables
+	\IntClearDoublePage
+}
+
+% -----------------------------------------------------------------------
+% F R O N T M A T T E R
+% 
+% The frontmatter environment set the page numbering to lowercase roman for 
+% ack, abstract, toc, lof, lot, loa, etc. It also resets page numbering for the 
+% remainder of thesis (arabic, starting at 1).
+\renewenvironment{frontmatter}
+{%
+ 	\setcounter{page}{1}
+	\renewcommand{\thepage}{\roman{page}}
+}
+{%
+	\clearpage
+	\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+}
