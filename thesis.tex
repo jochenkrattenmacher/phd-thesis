@@ -13,8 +13,9 @@
 % The document.
 \begin{document}
 	\begin{frontmatter}
-	% 	% \input{Frontmatter/titlepage}
-	% 	% \input{Frontmatter/acknowledgements}%
+	\input{Frontmatter/titlepage}
+	\input{Frontmatter/declaration}
+	\input{Frontmatter/acknowledgements}%
 	% 	% \input{Frontmatter/abstract}
 	\AddToc%  Table of contents.
 	% \AddLof%  List of figures.
@@ -30,7 +31,7 @@
 	\input{Content/Ase1}
 	\input{Content/discussion}
 	
-\printbibliography
+\printbibliography[heading=bibintoc, title={References}]
 
 
 \appendix
