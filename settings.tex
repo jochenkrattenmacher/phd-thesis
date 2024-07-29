@@ -14,7 +14,17 @@
 \usepackage{placeins}
 \usepackage{xspace}
 \usepackage{appendix}
+\usepackage[backend=biber, style=authoryear, sortcites=true, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
 
+\PassOptionsToPackage{hyphens}{url}
+\hypersetup{colorlinks=true, linkcolor={OliveGreen}, citecolor={blue}, urlcolor=blue}
+\addbibresource{biblio.bib}
+\DefineBibliographyStrings{english}{%
+  backrefpage = {page},% originally "cited on page"
+  backrefpages = {pages},% originally "cited on pages"
+}
+\AtBeginRefsection{\GenRefcontextData{sorting=ynt}}
+\AtEveryCite{\localrefcontext[sorting=ynt]}
 \captionsetup{font=footnotesize,labelfont=footnotesize}
 
 \newcommand{\IntClearDoublePage}{\clearpage{\pagestyle{empty}}}

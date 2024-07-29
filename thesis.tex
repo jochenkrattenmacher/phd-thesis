@@ -1,35 +1,27 @@
 \documentclass{book}
 \input{settings}
-\usepackage[backend=biber, style=authoryear, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
-
-\PassOptionsToPackage{hyphens}{url}
-\hypersetup{colorlinks=true, linkcolor={green}, citecolor={blue}, urlcolor=blue}
-\addbibresource{biblio.bib}
-\DefineBibliographyStrings{english}{%
-  backrefpage = {page},% originally "cited on page"
-  backrefpages = {pages},% originally "cited on pages"
-}
 
 % The document.
 \begin{document}
-	\begin{frontmatter}
-	\input{Frontmatter/titlepage}
-	\input{Frontmatter/declaration}
-	\input{Frontmatter/acknowledgements}%
-	% 	% \input{Frontmatter/abstract}
-	\AddToc%  Table of contents.
-	% \AddLof%  List of figures.
-	% \AddLot%  List of tables.
-	\end{frontmatter}
-   
-	\input{Content/background}
-	\input{Content/aims}
-	\input{Content/publications}
-	\input{Content/methods}
-	\chapter{Results}
-	\input{Content/tau_results}
-	\input{Content/Ase1}
-	\input{Content/discussion}
+\begin{frontmatter}
+\hypersetup{linkcolor=black}
+\input{Frontmatter/titlepage}
+\input{Frontmatter/declaration}
+\input{Frontmatter/acknowledgements}%
+% 	% \input{Frontmatter/abstract}
+\AddToc%  Table of contents.
+% \AddLof%  List of figures.
+% \AddLot%  List of tables.
+\end{frontmatter}
+
+\input{Content/background}
+\input{Content/aims}
+\input{Content/publications}
+\input{Content/methods}
+\chapter{Results}
+\input{Content/tau_results}
+\input{Content/Ase1}
+\input{Content/discussion}
 	
 \printbibliography[heading=bibintoc, title={References}]
 
