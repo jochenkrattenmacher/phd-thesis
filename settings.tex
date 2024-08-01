@@ -14,6 +14,7 @@
 \usepackage{placeins}
 \usepackage{xspace}
 \usepackage{appendix}
+\usepackage{wrapfig}
 \usepackage[backend=biber, style=authoryear, sortcites=true, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
 
 \PassOptionsToPackage{hyphens}{url}
@@ -26,6 +27,10 @@
 \AtBeginRefsection{\GenRefcontextData{sorting=ynt}}
 \AtEveryCite{\localrefcontext[sorting=ynt]}
 \captionsetup{font=footnotesize,labelfont=footnotesize}
+
+\newcommand{\pref}[2]{%
+	(\autoref{#1}#2)
+}
 
 \newcommand{\IntClearDoublePage}{\clearpage{\pagestyle{empty}}}
 % -----------------------------------------------------------------------
