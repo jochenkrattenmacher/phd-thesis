@@ -47,7 +47,7 @@ If one only considers our results at 42nM, one could speculate that the particul
     \centering
     \includegraphics[width=1\linewidth]{Figures/ase1_1e.png}
     \caption[Set B experiments microtubule dynamics.]{
-    Data obtained from a second set of experiments ("Set B experiments", see \autoref{methods}) with different experimental parameters than the data from the set of experiments shown thus far ("Set A experiments"). (A) Representative kymograph traces, representation analogous to \aref{ase1d}{A}. (B) Quantification of the density of Ase1-GFP(Methods). The numbers below the boxes denote the number of analyzed microtubule bundles. (C) Rescue frequency and (D) depolymerization velocity, representations analogous to \aref{ase1d}{B,E}. Legend for B-D in C, showing the concentration of Ase1-GFP in each set of experiments. Panels taken from \cite{Krattenmacher2024}, except panels C and D, which were created only for this thesis.
+    Data obtained from a second set of experiments ("Set B experiments", see \autoref{methods}) with different experimental parameters than the data from the set of experiments shown thus far ("Set A experiments"). (A) Representative kymograph traces, representation analogous to \aref{ase1d}{A}. (B) Quantification of the density of Ase1-GFP(Methods). The numbers below the boxes denote the number of analyzed microtubule bundles. (C) Rescue frequency and (D) depolymerization velocity, representations analogous to \aref{ase1d}{B,E}. Legend for B-D in C, showing the concentration of Ase1-GFP in each set of experiments. Panels taken from \cite{Krattenmacher2024}, except panels C and D, which I created only for this thesis.
         }\label{ase1e}
 \end{figure}
 
@@ -81,7 +81,18 @@ Our findings so far suggested that we observed "herding" of Ase1 by the depolyme
 
 What is the impact of Ase1 herding on microtubule depolymerization for isolated versus antiparallel MTs? Again, we found that the impact of single Ase1 molecules on the depolymerization of antiparallel MTs is stronger than in the case of isolated microtubules: While isolated microtubules at 6nM Ase1 herded more Ase1 than antiparallel microtubules at 1nM Ase1, they did not depolymerize more slowly than antiparallel MTs \pref{ase2b}{B,C}. For antiparallel MTs, we also observed the number of herded Ase1 molecules to positively correlate with the probability of a rescue occuring \pref{ase1c}{C} (a phenomenon we could not test for isolated MTs since they did not exhibit any rescues in this dataset; furthermore, the rescue frequency of isolated MTs appears independent from Ase1 density, see \aref{ase1d}{B}). Moreover, the Ase1 density at the microtubule end, which is a measure for not only accumulated Ase1 but the total number of Ase1 molecules present at the end, also shows a positive correlation with rescue frequency \pref{ase1c}{D}.\par
  
-Our experiments thus demonstrate that lattice-bound Ase1 molecules are herded by the depolymerizing MT ends and that the number of swept Ase1 molecules correlates with reduced depolymerization velocity, and, for antiparallel overlaps, with an increased probability of rescue. 
+Our experiments thus demonstrate that lattice-bound Ase1 molecules are herded by the depolymerizing MT ends and that the number of swept Ase1 molecules correlates with reduced depolymerization velocity, and, for antiparallel overlaps, with an increased probability of rescue. Yet how do these effects relate to each other? We set out to tackle this question by mathematically modeling Ase1 herding, focusing on the relation between depolymerization velocity and Ase1 accumulation. 
 
+
+
+
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1\linewidth]{Figures/ase2d.png}
+    \caption[Difference between the distribution of Ase1 on antiparallel and isolated MTs.]{
+    (A) Fitting results for the lengthscale of the exponential decay λ for all fitted density profiles D_A (as described in the methods). (B) An example Ase1 density profile D_A and visualized fitting results for an antiparallel overlap midway during depolymerization. The microtubule seed is on the left, and depolymerization proceeds toward the left. The yellow region shows the fitted region between X_{Dsleft} and X_{Dsright} (Methods). (C) An example Ase1 density profile D_A visualized fitting results for an isolated MT midway during depolymerization (representation analogous to B). (D) The number of accumulated Ase1 molecules as determined by the exponential (plus error function) fit divided by the number of accumulated Ase1 molecules as determined by the gaussian (plus error function) fit (numbers as determined for each respective density profile). Panel A taken from \cite{Krattenmacher2024}, the others I created only for this thesis.
+        }\label{ase2d}
+\end{figure}
 
 Within a few hundred nanometers at the depolymerizing ends of antiparallel overlaps and isolated MTs, we observed accumulation of Ase1 molecules (Figure 3A,B, Figure S3D).
