@@ -16,6 +16,8 @@
 \usepackage{appendix}
 \usepackage{wrapfig}
 \usepackage[backend=biber, style=authoryear, sortcites=true, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
+\usepackage{multirow}
+\usepackage{makecell}
 
 \PassOptionsToPackage{hyphens}{url}
 \hypersetup{colorlinks=true, linkcolor={OliveGreen}, citecolor={blue}, urlcolor=blue}
@@ -27,6 +29,7 @@
 \AtBeginRefsection{\GenRefcontextData{sorting=ynt}}
 \AtEveryCite{\localrefcontext[sorting=ynt]}
 \captionsetup{font=footnotesize,labelfont=footnotesize}
+\renewcommand\cellalign{lc}
 
 \newcommand{\pref}[2]{%
 	\xspace(\autoref{#1}#2)
