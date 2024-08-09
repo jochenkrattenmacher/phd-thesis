@@ -18,6 +18,10 @@
 \usepackage[backend=biber, style=authoryear, sortcites=true, maxbibnames=3, maxcitenames=1, backref=true]{biblatex}
 \usepackage{multirow}
 \usepackage{makecell}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{}{0pt}{\Huge}
 
 \PassOptionsToPackage{hyphens}{url}
 \hypersetup{colorlinks=true, linkcolor={OliveGreen}, citecolor={blue}, urlcolor=blue}
@@ -31,12 +35,8 @@
 \captionsetup{font=footnotesize,labelfont=footnotesize}
 \renewcommand\cellalign{lc}
 
-\newcommand{\pref}[2]{%
-	\xspace(\autoref{#1}#2)
-}
-\newcommand{\aref}[2]{%
-	\xspace\autoref{#1}#2
-}
+\newcommand{\pref}[2]{(\autoref{#1}#2)}
+\newcommand{\aref}[2]{\autoref{#1}#2}
 
 
 \newcommand{\IntClearDoublePage}{\clearpage{\pagestyle{empty}}}
