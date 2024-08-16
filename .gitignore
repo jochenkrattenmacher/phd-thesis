@@ -310,3 +310,4 @@ output.html
 *.png
 thesis.bbl-SAVE-ERROR
 **/old/*
+thesis.bcf-SAVE-ERROR
