@@ -389,7 +389,6 @@
 \RequirePackage[hyphens]{url} % Embedding URL's in document.
 
 % Enable hyperlinks only in the PDF.
-\RequirePackage[bookmarks=true, pdfstartview=Fit, linktoc=page, pdfpagemode=UseNone]{hyperref}
 
 % Define the colors of the hyperlink.
 \ifthenelse{\equal{\SgIntMedia}{screen}}
